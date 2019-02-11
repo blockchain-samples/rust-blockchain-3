@@ -14,6 +14,7 @@ struct Transaction {
 }
 
 #[derive(Serialize, Debug)]
+#[allow(dead_code)]
 pub struct Blockheader {
     timestamp: i64,
     nonce: u32,
@@ -23,12 +24,14 @@ pub struct Blockheader {
 }
 
 #[derive(Serialize, Debug)]
+#[allow(dead_code)]
 pub struct Block {
     header: Blockheader,
     count: u32,
     transactions: Vec<Transaction>
 }
 
+#[allow(dead_code)]
 pub struct Chain {
     chain: Vec<Block>,
     curr_trans: Vec<Transaction>,
@@ -37,6 +40,7 @@ pub struct Chain {
     reward: f32,
 }
 
+#[allow(dead_code)]
 impl Chain {
     pub fn new (miner_addr: String, difficulty: u32) -> Chain {
         let mut chain = Chain {
@@ -51,6 +55,7 @@ impl Chain {
         chain
     }
 
+    #[allow(dead_code)]
     pub fn new_transaction (&mut self, sender: String, receiver: String, amount: f32) -> bool {
         self.curr_trans.push(Transaction {
             sender,

@@ -101,3 +101,6 @@ fn main() {
         }
     }
 }
+
+#[path="../test/blockchain.rs"]
+mod test;
